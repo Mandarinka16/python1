@@ -1,0 +1,45 @@
+import datetime
+now = datetime.datetime.now()
+print("Здравствуйте! Вас приветствует программа по определению Вашего возраста в заданный год")
+#check format
+age = input ("Сколько Вам лет?  ")
+if age.isdigit():
+	#если введено число
+	# 117 - возраст самого старого человека в мире 
+	birth_year = now.year - int(age)
+	if int(age) > 117:
+		print("Вы долгожитель, наше почтение!")
+else:
+	print("К сожалению, Вы ввели не число, повторите попытку")
+#здесь нужен цикл, чтобы вернуться на ввод числа
+#"Ваш День Рождения в этом году уже прошел?"
+bday_gone_quiz = (input("Ваш День рождения в этом году уже прошел? Введите да/нет: ")).strip()
+if bday_gone_quiz == "да":
+	birthday_gone = True
+elif bday_gone_quiz == "нет":
+	b_day_today = (input("Возможно, Ваш День Рождения сегодня? Введите да/нет: ")).strip()
+	if b_day_today == "да":
+		birthday_gone = True
+		print("Поздравляю с Днем Рождения!")
+	else:
+		birthday_gone = False
+else:
+	print("Вы ввели некорректный ответ, попробуйте снова")
+year = input("Введите интересующий Вас год и я скажу, сколько лет Вам будет: ")
+if year.isdigit():
+	year = int(year)
+	if year<birth_year:
+		print("В этот год Вы еще не родились")
+	elif year==birth_year:
+		print("В этом году Вы родились")
+	else:
+		result = year - birth_year
+		print("В " + str(year) + " году Вам будет " + str(result))
+else:
+	print("Вы ввели не числовое значение/Программа не поддерживает заданный формат")
+#check format
+#date in the past
+#this year
+#date in the future - check for limit 
+
+#pront exit to leave bye
