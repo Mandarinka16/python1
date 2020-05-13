@@ -6,7 +6,7 @@
 #Достаем исходные продукты и цены из файла
 def get_products(input_file):
     products = {}
-    with open(input_file) as file:
+    with open(input_file,  "r", encoding="utf-8") as file:
         lines = file.readlines()
         for line in lines:
             product = line.strip().split(',')
@@ -17,13 +17,15 @@ def get_products(input_file):
                 pass
     return products
 
+
 def get_discounts(input_file):
     discounts = []
-    with open(input_file) as file:
+    with open(input_file, "r", encoding="utf-8") as file:
         lines = file.readlines()
         for line in lines:
             discounts.append(line.strip())
     return discounts
+
 
 def apply_discount(products, discounts):
     """ на входе словарь продуктов с исходными ценами и список скидок, на выходе - словарь с итоговыми ценами"""
