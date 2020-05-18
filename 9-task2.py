@@ -10,21 +10,15 @@ from user_agent import generate_user_agent
 
 path_now = os.getcwd() #get directory
 URL = "https://www.ozon.ru/category/umnye-chasy-15516/"
-headers = {'User-Agent': generate_user_agent(device_type="desktop", os=('linux', 'linux'))}
+headers = {'User-Agent': generate_user_agent(device_type="desktop", os=('mac', 'linux'))}
 page = requests.get(URL, timeout=5, headers=headers)
 name_folder = "folder"
 os.mkdir(name_folder)
 
-
 soup = BeautifulSoup(page.content, 'html.parser')
 results = soup.find_all('img', src=re.compile('\S+.jpg'))
 
-print(len(results))
-print(page.text)
-
-
 count = 0
-
 for result in results:
     link = result['src']
     print(link)
