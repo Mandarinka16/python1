@@ -6,7 +6,6 @@ import SnakeGame
 class Validate:
     @staticmethod
     def validate_login(login):
-        # здесь могли быть ваши регулярные выражения
         if re.fullmatch("([a-zA-Z]+[a-zA-Z0-9\_]+){,20}", login.lower()):
             return True
         else:
