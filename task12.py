@@ -23,6 +23,3 @@ class Calculator:
             return print("На ноль делить нельзя!")
         else:
             return result
-
-a = Calculator("sf", "sf")
-print(a.func_add())

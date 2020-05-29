@@ -27,8 +27,8 @@ class CalcTest(unittest.TestCase):
 
     def test_addition2(self):
         """Сложение - буквы"""
-        with self.assertRaises(TypeError):
-            Calculator("sd", "A").func_add()
+        test = Calculator("AF", "S3").func_add()
+        self.assertNotEqual(test, "AFS3")
 
     def test_substraction2(self):
         """Вычитание - буквы"""
@@ -46,24 +46,24 @@ class CalcTest(unittest.TestCase):
             Calculator("Aasf", "т").func_div()
 
     def test_addition3(self):
-        """Сложение - пробел"""
-        with self.assertRaises(TypeError):
-            Calculator(" ", "A ").func_add()
+        """Сложение - пустой символ"""
+        test = Calculator("", "").func_add()
+        self.assertNotEqual(test, "")
 
     def test_substraction3(self):
-        """Вычитание - пробел"""
+        """Вычитание - пустой символ"""
         with self.assertRaises(TypeError):
-            Calculator(" ", " ").func_sub()
+            Calculator("", "").func_sub()
 
     def test_multiplication3(self):
-        """Умножение - пробел"""
+        """Умножение - пустой символ"""
         with self.assertRaises(TypeError):
-            Calculator("   ", " ").func_mult()
+            Calculator("", "").func_mult()
 
     def test_division3(self):
-        """Деление - пробел"""
+        """Деление - пустой символ"""
         with self.assertRaises(TypeError):
-            Calculator(" ", " ").func_div()
+            Calculator("", "").func_div()
 
 
 unittest.main()
