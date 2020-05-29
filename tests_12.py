@@ -6,22 +6,22 @@ from task12 import Calculator
 
 class CalcTest(unittest.TestCase):
     def test_addition1(self):
-        """Сложение - позитианя проверка (пользователь ввел цифры)"""
+        """Сложение - позитивная проверка (пользователь ввел цифры)"""
         test = Calculator(15, 8).func_add()
         self.assertEqual(test, 23)
 
     def test_substraction1(self):
-        """Вычитание - позитианя проверка (пользователь ввел цифры)"""
+        """Вычитание - позитивная проверка (пользователь ввел цифры)"""
         test = Calculator(15, 8).func_sub()
         self.assertEqual(test, 7)
 
     def test_multiplication1(self):
-        """Умножение - позитианя проверка (пользователь ввел цифры)"""
+        """Умножение - позитивная проверка (пользователь ввел цифры)"""
         test = Calculator(15, 8).func_mult()
         self.assertEqual(test, 120)
 
     def test_division1(self):
-        """Деление - позитианя проверка (пользователь ввел цифры)"""
+        """Деление - позитивная проверка (пользователь ввел цифры)"""
         test = Calculator(20, 10).func_div()
         self.assertEqual(test, 2)
 
